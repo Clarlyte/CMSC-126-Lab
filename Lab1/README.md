@@ -23,11 +23,14 @@ This project implements a practical demonstration of the OSI (Open Systems Inter
    python -m osi_model.server
    ```
    The server will start listening on localhost (127.0.0.1) port 8000.
+![image](https://github.com/user-attachments/assets/258ce9af-e660-4691-8cde-08906e65f8dc)
 
-2. In a separate terminal, run the client:
+3. In a separate terminal, run the client:
    ```bash
    python -m osi_model.client
    ```
+![image](https://github.com/user-attachments/assets/363b9f32-b4b8-432e-bcc5-7ee59e526487)
+
    The client will connect to the server and send a test message.
 
 ## Project Structure
