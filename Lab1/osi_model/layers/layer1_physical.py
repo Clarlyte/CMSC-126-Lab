@@ -1,5 +1,5 @@
-from . import Layer
-from ..utils import debug_layer
+from osi_model.layers import Layer
+from osi_model.utils import debug_layer
 import socket
 import struct
 import binascii
@@ -97,7 +97,7 @@ class PhysicalLayer(Layer):
             return False
     
     @debug_layer
-    def send_up(self, socket_to_read=None, **kwargs):
+    def send_up(self, data=None, **kwargs):
         """
         Receives data from the physical medium:
         1. Synchronizes using frame delimiter
@@ -107,7 +107,7 @@ class PhysicalLayer(Layer):
             Received data for data link layer
         """
         # Get the source socket
-        source_socket = socket_to_read or self.socket
+        source_socket = kwargs.get('socket_to_read', self.socket)
         
         if not source_socket:
             print("No socket available for reception")
