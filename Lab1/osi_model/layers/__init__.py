@@ -1,17 +1,17 @@
-from abc import ABC, abstractmethod
+from .layer1_physical import PhysicalLayer
+from .layer2_datalink import DataLinkLayer
+from .layer3_network import NetworkLayer
+from .layer4_transport import TransportLayer
+from .layer5_session import SessionLayer
+from .layer6_presentation import PresentationLayer
+from .layer7_application import ApplicationLayer
 
-class Layer(ABC):
-    """Base abstract class for all OSI layers"""
-    
-    def __init__(self, name):
-        self.name = name
-    
-    @abstractmethod
-    def send_down(self, data, **kwargs):
-        """Process data and send it down to the layer below"""
-        pass
-    
-    @abstractmethod
-    def send_up(self, data, **kwargs):
-        """Process data and send it up to the layer above"""
-        pass
+__all__ = [
+    "PhysicalLayer",
+    "DataLinkLayer",
+    "NetworkLayer",
+    "TransportLayer",
+    "SessionLayer",
+    "PresentationLayer",
+    "ApplicationLayer",
+]
