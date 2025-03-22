@@ -6,7 +6,8 @@ class DataLinkLayer:
 
     def get_mac_address(self):
         """Fetches the MAC address dynamically."""
-        mac = ':'.join(['{:02x}'.format((uuid.getnode() >> elements) & 0xFF) for elements in range(0, 2 * 6, 8)])
+        mac = ':'.join(['{:02x}'.format((uuid.getnode() >> elements) & 0xFF) 
+                    for elements in range(0, 8 * 6, 8)])
         print(f"[Data Link Layer] Assigned MAC Address: {mac}")
         return mac
 
