@@ -57,6 +57,8 @@ The application will show detailed information about each step, including:
 - Data encoding/decoding
 - Message encapsulation/decapsulation
 
+  ![image](https://github.com/user-attachments/assets/d296c57b-c01d-424d-82dd-994dee1ab6f4)
+
 ## Project Structure
 
 The project is organized by OSI layers:
