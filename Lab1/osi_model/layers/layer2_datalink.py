@@ -4,12 +4,16 @@ class DataLinkLayer:
     def __init__(self):
         self.mac_address = self.get_mac_address()
 
-    def get_mac_address(self):
-        """Fetches the MAC address dynamically."""
-        mac = ':'.join(['{:02x}'.format((uuid.getnode() >> elements) & 0xFF) 
-                    for elements in range(0, 8 * 6, 8)])
-        print(f"[Data Link Layer] Assigned MAC Address: {mac}")
-        return mac
+   def get_mac_address(self):
+        """Fetches the MAC address dynamically and reverses it."""
+        # Generate the MAC address dynamically
+        mac = ':'.join(['{:02x}'.format((uuid.getnode() >> i) & 0xff) for i in range(0, 48, 8)])
+        
+        # Reverse the MAC address string
+        reversed_mac = ':'.join(mac.split(':')[::-1])  # Split by ':' and reverse the parts
+        
+        print(f"[Data Link Layer] Assigned MAC Address: {reversed_mac}")
+        return reversed_mac
 
     def encapsulate(self, payload):
         """Adds MAC address to the data before sending."""
